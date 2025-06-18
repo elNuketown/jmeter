@@ -6,9 +6,9 @@ Este projeto realiza testes de carga e desempenho na API pública [DummyJSON](ht
 
 ## 📁 Estrutura do Projeto
 
-- `outsera.jmx` – Plano de teste configurado no JMeter  
+- `teste.jmx` – Plano de teste configurado no JMeter  
 - `resultados.jtl` – Arquivo de saída com os resultados do teste  
-- `relatorio_html/` – Relatório completo em HTML gerado a partir dos resultados  
+- `reporte_html/` – Relatório completo em HTML gerado a partir dos resultados  
 - `README.md` – Documentação do projeto
 
 ---
@@ -25,12 +25,44 @@ Este projeto realiza testes de carga e desempenho na API pública [DummyJSON](ht
 
 **1. Rodar o teste em modo não-GUI:**
 
-```bash
-./jmeter -n -t outsera.jmx -l resultados.jtl
+./jmeter -n -t teste.jmx -l resultados.jtl
+
+**2. Gerar o reporte:**
+
+./jmeter -g resultado.jtl -o reporte_html
+
+**3. Visualizar report:**
+
+Abra o arquivo reporte/index.html em seu navegador.
 
 ---
 
-2. Gerar o relatório HTML:
+## 🚀 Configuração do projeto
 
-```bash
-./jmeter -g resultados.jtl -o relatorio_html
+- Número de usuários (threads): 500
+
+- Duração do teste: 5 minutos
+
+- Ramp-up: 150 segundos
+
+---
+
+## 🚀 Relatorio HTML 
+
+- Tempo médio e máximo de resposta
+
+- Gráficos de throughput e tempo por segundo
+
+- Percentis (90%, 95%, 99%)
+
+- Tabela de erros por request
+
+- Métricas por amostra de requisição
+
+---
+
+## 🚀 Autor
+
+Vinicios Virissimo
+
+---
