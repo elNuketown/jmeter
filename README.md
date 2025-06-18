@@ -1,78 +1,76 @@
-# 📊 Teste de Carga com Apache JMeter - API DummyJSON
+📊 Teste de Carga com Apache JMeter - API DummyJSON
+Este projeto realiza testes de carga e desempenho na API pública DummyJSON, utilizando a ferramenta Apache JMeter.
 
-Este projeto tem como objetivo realizar testes de carga e desempenho na API pública [DummyJSON](https://dummyjson.com), utilizando a ferramenta **Apache JMeter**.
+📁 Estrutura do Projeto
+outsera.jmx – Plano de teste configurado no JMeter
 
----
+resultados.jtl – Arquivo de saída com os resultados do teste
 
-## 📁 Estrutura do Projeto
+relatorio_html/ – Relatório completo em HTML gerado a partir dos resultados
 
-.
-├── outsera.jmx # Plano de teste JMeter
-├── resultados.jtl # Arquivo de resultados gerado pela execução
-├── report_html/ # Pasta gerada com o relatório em HTML
-└── README.md # Este arquivo
+README.md – Documentação do projeto
 
-## 🚀 Requisitos
+⚙️ Requisitos
+Apache JMeter 5.6+
 
-- [Apache JMeter](https://jmeter.apache.org/) 5.6+
-- Java 8+ (já configurado no JAVA_HOME)
-- Terminal (bash, Git Bash, CMD ou PowerShell)
+Java 8 ou superior (com JAVA_HOME configurado)
 
----
+Terminal Bash, Git Bash, PowerShell ou CMD
 
-## ⚙️ Como Executar o Teste
+🚀 Executando os Testes
+1. Rodar o teste em modo não-GUI:
 
-1. **Executar o plano de teste:**
-
-```bash
+bash
+Copiar
+Editar
 ./jmeter -n -t outsera.jmx -l resultados.jtl
-Gerar relatório HTML:
+2. Gerar o relatório HTML:
 
 bash
 Copiar
 Editar
 ./jmeter -g resultados.jtl -o relatorio_html
-Abrir o relatório:
+3. Visualizar o relatório:
 
-Abra o arquivo relatorio_html/index.html em qualquer navegador.
+Abra o arquivo relatorio_html/index.html em seu navegador.
 
-🧪 O que está sendo testado
-A API DummyJSON nos seguintes endpoints:
+🧪 Endpoints Testados
+GET /products/1
 
-GET /products/
+POST /products/add
+
+PUT /products/1
+
+DELETE /products/1
+
+Todos os endpoints são da API DummyJSON e foram configurados com payloads de teste para simular um fluxo completo de uso da aplicação.
 
 👥 Configuração do Teste
-Usuários (threads): 500
+Número de usuários (threads): 500
 
-Duração: 5 minutos
+Duração do teste: 5 minutos
 
-Ramp-up: 150 segundos
+Ramp-up: 300 segundos
 
-📈 Relatório Gerado
-O relatório HTML inclui:
+Validações: Códigos HTTP e conteúdo da resposta (Assertions)
 
-Gráficos de tempo de resposta
+📈 Sobre o Relatório HTML
+O relatório inclui:
 
-Taxa de throughput
+Tempo médio e máximo de resposta
+
+Gráficos de throughput e tempo por segundo
 
 Percentis (90%, 95%, 99%)
 
-Erros por tipo
+Tabela de erros por request
 
-Visão geral por request
+Métricas por amostra de requisição
 
-✨ Autor
-Vinicios | Engenheiro de Qualidade de Software
-Contato: LinkedIn (ou outro link)
+👨‍💻 Autor
+Vinicios Virissimo
+Engenheiro de Qualidade de Software
+📫 LinkedIn (substitua pelo seu perfil real)
 
 📝 Licença
-Este projeto é de uso livre para fins de aprendizado e testes.
-
----
-
-Se quiser, posso:
-- Inserir o README diretamente no seu `.jmx` como **documentação embutida**
-- Adaptar para português técnico ou inglês, se for para GitHub internacional
-- Incluir badges e GIFs de relatório automático
-
-Deseja que eu gere o arquivo pronto pra colar no GitHub?
+Este projeto é livre para fins de estudo, aprendizado e demonstração de testes de carga com JMeter.
